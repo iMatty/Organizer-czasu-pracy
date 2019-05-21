@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+		id          = "myfirstapp"
+    version     = "1.0.0" >
+  <name>Organizer-czasu-pracy</name>
+  <description>Organizer Czasu Pracy</description>
+  <author href="http://mypersonalwebsite.com">
+		John Brown
+	</author>
+	<platform name="android" />
+  
+  <allow-navigation href="*" />
+	<plugin name="cordova-plugin-device" spec="~1.1.7" />
+	<plugin name="cordova-plugin-dialogs" spec="~1.3.4" />
+  <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
+</widget>
