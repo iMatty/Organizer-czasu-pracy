@@ -7,7 +7,6 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -17,7 +16,7 @@
 		<script src="js/script.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="signIn">
 	<br>  <p class="text-center">Organizer czasu pracy</p>
 	<hr>
 	<div class="row">
@@ -28,8 +27,8 @@
 				<a href="" class="float-right btn btn-outline-primary">Sign up</a>
 				<h4 class="card-title mb-4 mt-1">Sign in</h4>
 				<p>
-					<a href="" class="btn btn-block btn-outline-info"> <i class="fab fa-twitter"></i>   Login via Google</a>
-					<a href="" class="btn btn-block btn-outline-primary"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+					<button class="btn btn-block btn-outline-info" onclick="googleSignIn()"> <i class="fab fa-twitter"></i>   Login via Google</button>
+					<button class="btn btn-block btn-outline-primary" onclick="fbSignIn()"> <i class="fab fa-facebook-f"></i>   Login via facebook</button>
 				</p>
 				<hr>
 				<form>
@@ -57,9 +56,40 @@
 </div>
 <!--container end.//-->
 
+<div class="container" id="loggedIn" style="display: none;">
+	<p id="loggedUser"></p>
+	<button class="btn btn-dark">Log Out</button>
+</div>
+
+
+<!--FIREBASE -->
 
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
 <script src="js/firebaseConfig.js" ></script>
+<script src="js/googleSignIn.js"></script>
 
+<!--FACEBOOK -->
+
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '420155858538043',
+			xfbml      : true,
+			version    : 'v3.3'
+		});
+		FB.AppEvents.logPageView();
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "https://connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="js/fbSignIn.js"></script>
 </body>
 </html>
