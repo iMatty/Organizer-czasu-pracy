@@ -8,11 +8,12 @@ const googleSignIn = () => {
              const loggedInContainer = document.getElementById('loggedIn');
             document.getElementById('signIn').style.display = 'none';
             loggedInContainer.style.display = 'block';
-            document.getElementById('loggedUser').innerText = `User: ${user}`
+            document.getElementByCl('loggedUser').innerText = `User: ${user}`
             }
     })
         .catch(function (error) {
-        console.log(error);
+            //Handle errors
+            document.getElementById('errorMessage').innerText = error.message;
     });
 }
 

@@ -1,0 +1,36 @@
+.errorMessage {
+    color: #ff3333;
+    font-size: 12px;
+    margin-top: 2%;
+    font-family: 'Lato', sans-serif;
+;
+}
+.card-title {
+    text-transform: uppercase;
+}
+.btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+.btn-fb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #3B5998;
+    color: #fff;
+}
+
+.btn-google {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F95F62;
+    color: #fff;
+}
+
+.fa-facebook-square:before, .fa-google-plus-square:before  {
+    margin-right: 40px;
+    font-size: 35px;
+}
+
