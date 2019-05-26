@@ -8,7 +8,7 @@ const googleSignIn = () => {
              const loggedInContainer = document.getElementById('loggedIn');
             document.getElementById('signIn').style.display = 'none';
             loggedInContainer.style.display = 'block';
-            document.getElementByCl('loggedUser').innerText = `User: ${user}`
+            document.getElementById('loggedUser').innerText = `User: ${user}`
             }
     })
         .catch(function (error) {
