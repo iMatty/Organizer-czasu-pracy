@@ -1,5 +1,3 @@
-
-//  Initialize Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyAvB8Kze1E6W961F-EshAzUWlgwNIfR9II",
     authDomain: "organizer-czasu-pracy.firebaseapp.com",
@@ -8,6 +6,6 @@ var firebaseConfig = {
     storageBucket: "organizer-czasu-pracy.appspot.com",
     messagingSenderId: "1070221525856",
     appId: "1:1070221525856:web:f34b4b2daadb58b0"
-};
+}
 firebase.initializeApp(firebaseConfig);
 

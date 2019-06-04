@@ -1,16 +1,10 @@
-const googleSignIn = () => {
+const googleSignIn = (e) => {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
-        .then ( function (result) {
-           if(result) {
-             const user = result.user.email;
-             const loggedInContainer = document.getElementById('loggedIn');
-            document.getElementById('signIn').style.display = 'none';
-            loggedInContainer.style.display = 'block';
-            document.getElementById('loggedUser').innerText = `User: ${user}`
-            }
-    })
+        .then (cred => {
+            console.log(cred);
+        })
         .catch(function (error) {
             //Handle errors
             document.getElementById('errorMessage').innerText = error.message;
