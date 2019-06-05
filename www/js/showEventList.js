@@ -1,6 +1,8 @@
     
 const eventList = document.querySelector('#event-list');
 const form = document.querySelector('#add-event-form');
+let url = new URL(location.href)
+let userId = url.searchParams.get("userId");
 
 // create event & render event
 function renderEvent(doc){
@@ -15,7 +17,6 @@ function renderEvent(doc){
     startedAt.textContent = doc.data().start;
     endedAT.textContent = doc.data().koniec;
     cross.textContent = 'x';
-
 
     li.appendChild(type);
     li.appendChild(startedAt);
@@ -34,10 +35,11 @@ function renderEvent(doc){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('events').add({
+    db.collection('events').add({     
         type: form.type.value,
         start: form.start.value,
-        koniec: form.koniec.value
+        koniec: form.koniec.value,
+        userId: userId
     });
     form.type.value = '';
     form.start.value = '';
@@ -46,7 +48,7 @@ form.addEventListener('submit', (e) => {
 
 
 
-db.collection('events').onSnapshot(snapshot => {
+db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if(change.type == 'added'){
