@@ -38,7 +38,7 @@
             <p class="text-center">Organizer czasu pracy</p>
             <hr/>
                     <h2 class="card-title">Zaloguj się</h2>
-                    <div class="signUp-container--card">
+                    <div class="signIn-container--card">
                         <button type="button" class="btn btn-block btn-fb" onclick="fbSignIn()"><i
                                 class="fab fa-facebook-square"></i> Facebook
                         </button>
@@ -47,7 +47,7 @@
                         </button>
                         <p id="errorMessage" class="errorMessage"></p>
                     </div>
-                    <h2 class="signUp-container--line"><span>Albo</span></h2>
+                    <h2 class="signIn-container--line"><span>Albo</span></h2>
                     <form id="signIn-form">
                         <div class="form-group input-group">
                             <input id='signIn-email' class="form-control " placeholder="test@gmail.com" type="text">
@@ -67,7 +67,6 @@
                             <div class="col-md-12 text-center">
                                 <p class="text-center signUp-container--btn">Nie masz konta? <a href="#" id="signUpBtn">Zarejestruj się! </a></p>
                             </div>
-
                         </div>
                     </form>
         </aside>
@@ -77,53 +76,41 @@
 
 <div class="container signUp-container" id="signUp">
     <br>
-    <p class="text-center">Organizer czasu pracy</p>
-    <hr>
     <div class="row">
-        <aside class="col-sm-4"></aside>
         <aside class="col-sm-4">
-            <div class="card">
-                <article class="card-body">
-                    <h4 class="card-title mb-4 text-center">Zarejestruj się </h4>
-                    <hr>
+            <p class="text-center">Organizer czasu pracy</p>
+            <hr>
+                <h2 class="card-title">Zarejestruj się </h2>
+                   <div class="signUp-container--card">
+                       <div class="signUp-container--user_icon">
+                        <i class="fas fa-user-circle fa-4x"></i>
+                       </div>
                     <form id="signUp-form">
                         <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
                             <input name="" id="name" class="form-control" placeholder="Nazwa" type="text">
                         </div>
 
                         <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                            </div>
                             <input name="" id='signUp-email' class="form-control" placeholder="Adres email" type="email">
                         </div>
 
                         <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                            </div>
-                            <input id="signUp-password" class="form-control" placeholder="Stwórz hasło" type="password">
+                            <input id="signUp-password" class="form-control" placeholder="Utwórz hasło" type="password">
                         </div>
 
                         <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                            </div>
                             <input class="form-control" placeholder="Potwierdź hasło" type="password">
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"> Stwórz konto</button>
+                            <button type="submit" class="btn btn-primary btn-login"> Stwórz konto</button>
                         </div>
-                        <p class="text-center">Posiadasz konto? <a href="signIn.html">Zaloguj się ! </a></p>
+                        <p class="text-center signUp-container--btn">Posiadasz konto? <a href="#">Zaloguj się ! </a></p>
                     </form>
-                </article>
-            </div>
+                   </div>
         </aside>
     </div>
+</div>
 
     <div class="container main-app" id="mainApp">
         <br>
