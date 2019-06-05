@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    </head>
+    <body>
+
+        <h1>Dni wolne</h1>
+
+        <div class="content">
+
+            <form id="add-event-form">
+                <input type="text" name="type" placeholder="rodzaj urlopu">
+                <input type="text" name="start" placeholder="początek">
+                <input type="text" name="koniec" placeholder="koniec">
+                <button>Dodaj urlop</button>
+            </form>
+            <ul id="event-list"></ul>
+
+        </div>
+
+        <script src='js/firebaseConfig.js'></script>
+        <script src="js/showEventList.js"></script>
+    </body>
+</html>
