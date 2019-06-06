@@ -1,4 +1,17 @@
-    
+// hamburger icon animation
+
+$(document).ready(function () {
+    $('.button').on('click', function (e) {
+        e.preventDefault();
+        $('.animated-icon').toggleClass('open');
+        $('.navbar').toggleClass('dark');
+        $('body').css('overflow', 'hidden');
+
+    });
+});
+
+
+
 const eventList = document.querySelector('#event-list');
 const form = document.querySelector('#add-event-form');
 let url = new URL(location.href)
@@ -35,7 +48,7 @@ function renderEvent(doc){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('events').add({     
+    db.collection('events').add({
         type: form.type.value,
         start: form.start.value,
         koniec: form.koniec.value,

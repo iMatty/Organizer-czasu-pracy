@@ -1,4 +1,5 @@
 const googleSignIn = (e) => {
+    e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
