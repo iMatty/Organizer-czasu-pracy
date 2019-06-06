@@ -1,0 +1,47 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Organizer czasu pracy</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/simple-calendar.css">
+		<link rel="stylesheet" href="css/demo.css">
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    </head>
+    <body>
+		<h1 class="title">Organizer czasu pracy</h1>
+		<div id="container" class="calendar-container"></div>
+
+			<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+			<script src="js/jquery.simple-calendar.js"></script>
+			<script>
+				$(document).ready(function(){
+				$("#container").simpleCalendar({
+					fixedStartDay: false
+				});
+			});
+			</script>
+			
+			
+        <h1>Dni wolne</h1>
+
+        <div class="content">
+
+            <form id="add-event-form">
+                <input type="text" name="type" placeholder="rodzaj urlopu">
+                <input type="text" name="start" placeholder="początek">
+                <input type="text" name="koniec" placeholder="koniec">
+                <button>Dodaj urlop</button>
+            </form>
+            <ul id="event-list"></ul>
+
+        </div>
+
+        <script src='js/firebaseConfig.js'></script>
+        <script src="js/showEventList.js"></script>
+    </body>
+</html>

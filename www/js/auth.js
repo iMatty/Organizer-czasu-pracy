@@ -52,6 +52,8 @@ signInForm.addEventListener('submit', (e) => {
     firebase.auth().signInWithEmailAndPassword(email, password).then((cred) => {
         console.log(cred);
         signInForm.reset();
+
+        window.location.replace("list-view.html?userId="+ firebase.auth().currentUser.uid);
     }).catch((e) => {
         console.log(e);
     });
