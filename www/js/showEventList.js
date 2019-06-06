@@ -48,17 +48,22 @@ function renderEvent(doc){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('events').add({
-        type: form.type.value,
-        start: form.start.value,
-        koniec: form.koniec.value,
-        userId: userId
-    });
-    form.type.value = '';
-    form.start.value = '';
-    form.koniec.value = '';
-});
 
+    if (Validate(start_date) && Validate(end_date)) {
+        db.collection('events').add({
+            type: form.type.value,
+            start: matched_date(start_date)[0],
+            koniec: matched_date(end_date)[0],
+            userId: userId
+        });
+        form.type.value = '';
+        form.start.value = '';
+        form.koniec.value = '';
+    } else {
+        window.alert("Wrong date format, enter data again");
+        return false;
+    }
+});
 
 
 db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
@@ -72,3 +77,4 @@ db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
         }
     });
 });
+
