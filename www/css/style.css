@@ -123,3 +123,6 @@
     margin-bottom: 2%;
     color: #47525E;
 }
+.btn-primary {
+    border-color: transparent;
+}
