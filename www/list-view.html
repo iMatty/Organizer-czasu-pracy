@@ -1,32 +1,89 @@
 <html>
-    <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Organizer czasu pracy</title>
-		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/simple-calendar.css">
-		<link rel="stylesheet" href="css/demo.css">
-        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
-    </head>
-    <body>
-		<h1 class="title">Organizer czasu pracy</h1>
-		<div id="container" class="calendar-container"></div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer czasu pracy</title>
 
-			<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    <link rel="stylesheet" href="css/simple-calendar.css">
+    <link rel="stylesheet" href="css/demo.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
-			<script src="js/jquery.simple-calendar.js"></script>
-			<script>
-				$(document).ready(function(){
-				$("#container").simpleCalendar({
-					fixedStartDay: false
-				});
-			});
-			</script>
-			
-			
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark  indigo darken-2">
+        <button class="navbar-toggler button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon"><span></span><span></span><span></span></div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+            <ul class="navbar-nav mr-auto">
+                <li class="navbar--userInfo">
+                        <span class="navbar--userInfo__user">
+                            <h4>Konto testowe</h4>
+                            <p>Graphic Designer</p>
+                        </span>
+                    <span class="navbar--userInfo__icon"><i
+                            class="fas fa-user-circle fa-5x"></i><p>Konfiguracja konta</p></span>
+
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Mój kalendarz<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lista zdarzeń</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Szukaj</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Powiadomienia</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ustawienia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Wyloguj</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="title">Organizer czasu pracy</h1>
+        <div id="container" class="calendar-container"></div>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                crossorigin="anonymous"></script>
+        <script src="js/jquery.simple-calendar.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#container").simpleCalendar({
+                    fixedStartDay: false
+                });
+            });
+        </script>
+
+
         <h1>Dni wolne</h1>
 
         <div class="content">
@@ -40,9 +97,15 @@
             <ul id="event-list"></ul>
 
         </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
 
         <script src='js/firebaseConfig.js'></script>
         <script src='js/validate.js'></script>
         <script src="js/showEventList.js"></script>
     </body>
 </html>
+
