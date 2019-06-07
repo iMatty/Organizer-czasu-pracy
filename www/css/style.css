@@ -19,7 +19,9 @@
     font-weight: 400;
     border-radius: 0;
 }
-
+.btn:hover {
+    color: white !important;
+}
 .btn:focus {
     color: white;
 }
@@ -64,13 +66,15 @@
     margin-top: 5%;
     height: 50px;
     width: 100%;
+    color: white;
 }
 
 .btn-login:hover {
     background-color: #637283;
 }
 .btn-login:focus {
-    background-color: #637283;
+    background-color: #637283 !important;
+    border: 0;
 }
 
 .main-app {
@@ -125,4 +129,9 @@
 }
 .btn-primary {
     border-color: transparent;
+}
+.btn-disabled {
+    cursor: not-allowed;
+    background-color: #a8b2bd;
+
 }

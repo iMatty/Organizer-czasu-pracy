@@ -6,12 +6,14 @@
        console.log('signed out')
     }
 });
+
 // sign up new user
 const signUpForm = document.getElementById('signUp-form');
 const signInForm = document.getElementById('signIn-form');
 
 
 if(signInForm) {
+
     signUpForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -23,6 +25,7 @@ if(signInForm) {
         firebase.auth().createUserWithEmailAndPassword(email, password).then((cred) => {
             console.log(cred);
             //clear form
+            createDefaultUserSettings(firebase.auth().currentUser.uid)
             signUpForm.reset();
             window.location.replace("list-view.html?userId=" + firebase.auth().currentUser.uid);
         }).catch((error) => {
@@ -46,6 +49,7 @@ if(logoutBtn) {
 };
 
 // login
+
 if (signInForm) {
     signInForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -72,4 +76,6 @@ function createDefaultUserSettings(userId) {
         contractType: 'employmentContract'
     });
 }
+
+
 

@@ -1,10 +1,10 @@
-const googleSignIn = (e) => {
-    e.preventDefault();
+const googleSignIn = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
-        .then (cred => {
-            console.log(cred);
+        .then (() => {
+            window.location.replace("list-view.html?userId=" + firebase.auth().currentUser.uid);
+
         })
         .catch(function (error) {
             //Handle errors
