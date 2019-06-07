@@ -14,7 +14,8 @@
             insertEvent: true, // can insert events
             displayEvent: true, // display existing event
             fixedStartDay: true, // Week begin always by monday
-            event: [], //List of event
+            events: [], //List of event
+            eventsInfo: [],
             insertCallback : function(){} // Callback when an event is added to the calendar
         };
 
@@ -25,6 +26,7 @@
         this._defaults = defaults;
         this._name = pluginName;
         this.currentDate = new Date();
+        this.events = options.events;
         this.init();
     }
 
@@ -33,6 +35,7 @@
         init: function () {
             let container = $(this.element);
             let todayDate = this.currentDate;
+            let events = this.events;
 
             let calendar = $('<div class="calendar"></div>');
             let header = $('<header>'+
@@ -92,6 +95,18 @@
                 //For each row
                 for(let i = 0; i<7; i++) {
                     let td = $('<td><a href="#" class="day">'+day.getDate()+'</a></td>');
+
+                    if (plugin.settings.displayEvent) {
+                        const eventIndex = $.inArray(this.formatToYYYYMMDD(day), plugin.events);
+                        if (eventIndex !== -1) {
+                            console.log('found event');
+                            td.find(".day").addClass("event");
+
+                            // for tooltip. Have to generalize this
+                            td.find(".day").attr('data-tippy-content', plugin.settings.eventsInfo[eventIndex]);
+                        }
+                    }
+
                     //if today is this day
                     if(day.toDateString() === (new Date).toDateString()){
                         td.find(".day").addClass("today");
@@ -156,8 +171,21 @@
                 filler.hide();
             });
         },
+
+        formatToYYYYMMDD: function (date) {
+            var d = new Date(date),
+                day = '' + d.getDate(),
+                month = '' + (d.getMonth() + 1),
+                year = d.getFullYear();
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+
+            return [year, month, day].join('-');
+        },
+
         //Small effect to empty a container empty :
-            function (elem,x,y){
+        empty: function (elem,x,y){
             let elemOffset = elem.offset();
 
             let filler = $('.filler');
@@ -186,5 +214,7 @@
                 }
         });
     };
+
+
 
 })( jQuery, window, document );

@@ -7,9 +7,29 @@ $(document).ready(function () {
         $('.navbar').toggleClass('dark');
         $('body').css('overflow', 'hidden');
     });
+
+    let holidays = [];
+    let desc = []
+        
+    $.ajax({
+        type: 'GET',
+        url: 'https://calendarific.com/api/v2/holidays?&api_key=674d78db76ced7b0975e56abfc02b6d35c265b15&country=PL&year=2019',
+        success: function(data) {
+          var pl_holidays = data["response"]["holidays"]
+          $.each(pl_holidays, function(i, holiday){
+            holidays.push(holiday['date']['iso']);
+            desc.push(holiday['name']);
+          })
+        }
+      }
+    );
+
+    $("#container").simpleCalendar({
+        events: holidays,
+        eventsInfo: desc,
+        fixedStartDay: false
+    });
 });
-
-
 
 const eventList = document.querySelector('#event-list');
 const form = document.querySelector('#add-event-form');
