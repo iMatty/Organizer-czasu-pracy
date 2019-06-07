@@ -177,3 +177,9 @@ a.nav-link {
     width: 100%;
     margin-top: 10%;
 }
+.nav-brand {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
