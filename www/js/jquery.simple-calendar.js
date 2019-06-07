@@ -22,6 +22,8 @@
     function Plugin ( element, options ) {
         this.element = element;
         this.settings = $.extend( {}, defaults, options );
+        this._defaults = defaults;
+        this._name = pluginName;
         this.currentDate = new Date();
         this.init();
     }
@@ -74,13 +76,13 @@
             //first day of the month
             let firstDay = new Date(y, m, 1);
             //If not monday set to previous monday
-            while(firstDay.getDay() != 1){
+            while(firstDay.getDay() !== 1){
                 firstDay.setDate(firstDay.getDate()-1);
             }
             //last day of the month
             let lastDay = new Date(y, m + 1, 0);
             //If not sunday set to next sunday
-            while(lastDay.getDay() != 0){
+            while(lastDay.getDay() !== 0){
                 lastDay.setDate(lastDay.getDate()+1);
             }
 

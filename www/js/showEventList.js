@@ -6,7 +6,6 @@ $(document).ready(function () {
         $('.animated-icon').toggleClass('open');
         $('.navbar').toggleClass('dark');
         $('body').css('overflow', 'hidden');
-
     });
 });
 
