@@ -1,4 +1,4 @@
 # Organizer-czasu-pracy
 UEK BAI Project
 
-Strona projektu: http://v-ie.uek.krakow.pl/~s195228/Organizer-czasu-pracy/project_page.html
+Strona projektu: https://imatty.github.io/Organizer-czasu-pracy/project_page.html
