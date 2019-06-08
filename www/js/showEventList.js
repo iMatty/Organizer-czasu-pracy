@@ -64,6 +64,12 @@ function renderEvent(doc){
     });
 }
 
+const accountConfig = document.getElementById('accountConfig')
+
+accountConfig.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.replace("user-account.html?userId="+ userId);
+});
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
