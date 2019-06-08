@@ -29,6 +29,10 @@ $(document).ready(function () {
         eventsInfo: desc,
         fixedStartDay: false
     });
+
+    $('#call').on('click', function (e) {
+        window.location.replace("numbers-list.html?userId="+ userId);
+    });
 });
 
 const eventList = document.querySelector('#event-list');
@@ -102,4 +106,3 @@ db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
         }
     });
 });
-
