@@ -10,7 +10,11 @@ $(document).ready(function () {
 });
 
 const numberList = document.querySelector('#number-list');
+const freeDaysCounter = document.querySelector('#free-days-counter');
+const daysCounter = document.querySelector('#counter');
 const form = document.querySelector('#add-number-form');
+const formDays = document.querySelector('#add-days-form');
+let counterButton = document.querySelector('#counter-btn');
 let url = new URL(location.href)
 let userId = url.searchParams.get("userId");
 
@@ -41,13 +45,38 @@ function renderNumber(doc){
     });
 }
 
+function renderFreeDays(doc){
+    daysCounter.textContent = doc.data().freeDays;
+    daysCounter.setAttribute('data-id', doc.id);
+}
+
+counterButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    counterButton.hidden = true;
+    counter.hidden = true;
+    formDays.days.value = daysCounter.textContent;
+    formDays.hidden = false;
+});
+
+formDays.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let settingsId = daysCounter.attributes['data-id'].value
+    db.collection('userSettings').doc(settingsId).update({
+        freeDays: formDays.days.value
+    }).then(function() {
+        location.reload();
+    });
+});
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('numbers').add({
         name: form.name.value,
         surname: form.surname.value,
         number: form.number.value,
-    userId: userId
+        userId: userId
     });
     form.name.value = '';
     form.surname.value = '';
@@ -66,3 +95,11 @@ db.collection('numbers').where('userId', '==', userId).onSnapshot(snapshot => {
     });
 });
 
+db.collection('userSettings').where('userId', '==', userId).onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if(change.type == 'added'){
+            renderFreeDays(change.doc);
+        }
+    });
+});

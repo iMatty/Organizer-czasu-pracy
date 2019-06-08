@@ -36,8 +36,30 @@
         <a class="nav-brand">Organizer czasu pracy</a>
     </nav>
 
-    <div class="content">
+    <div id="free-days-counter">
+        <h3>Liczba dostępnych dni</h3>
+        <span id='days-counter'>
+            <p id='counter'></p>
+            <button id='counter-btn'>Edytuj</button>
+        </span>
+        
+        <form id="add-days-form" hidden>
+            <input type="text" name="days" placeholder="0">
+            <button id='confirm-days-counter'>Zmień liczbę dni</button>
+        </form>
+    </div>
+    
+    <div class="contract">
+        <h3>Rodzaj umowy</h3>
+        <select>
+            <option value="casualWorkContract">Umowa zlecienie</option>
+            <option value="employmentContract">Umowa o pracę</option>
+            <option value="contractWork">Umowa o dzieło</option>
+        </select>
+    </div>
 
+    <div class="content">
+        <h3>Osoby do kontaktu</h3>
         <form id="add-number-form">
             <input type="text" name="name" placeholder="imię">
             <input type="text" name="surname" placeholder="Nazwisko">
@@ -45,7 +67,6 @@
             <button>Dodaj osobę</button>
         </form>
         <ul id="number-list"></ul>
-
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>

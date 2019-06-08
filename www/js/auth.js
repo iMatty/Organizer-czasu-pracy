@@ -22,7 +22,7 @@ signUpForm.addEventListener('submit', (e) => {
     // sign up new user
     firebase.auth().createUserWithEmailAndPassword(email, password).then((cred) => {
         console.log(cred);
-
+        createDefaultUserSettings(firebase.auth().currentUser.uid)
         //clear form
         signUpForm.reset();
     }).catch((error) => {
@@ -60,4 +60,11 @@ signInForm.addEventListener('submit', (e) => {
 
 });
 
+function createDefaultUserSettings(userId) {
+    db.collection('userSettings').add({
+        freeDays: 0,
+        userId: userId,
+        contractType: 'employmentContract'
+    });
+}
 
