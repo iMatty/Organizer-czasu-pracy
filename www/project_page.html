@@ -10,8 +10,22 @@
 
     <title>Organizer czasu pracy</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/pp.css" rel="stylesheet">
@@ -27,9 +41,58 @@
 
       <div class="jumbotron">
         <h1>Nasza aplikacja</h1>
-        <p class="lead">to kalendarz do którego użytkownik wprowadza urlopy, L4, na żądanie, delegacje itp. a aplikacja liczy ile zostało urlopu do wykorzystania, ile będzie potrącone z tytułu L4 i ile się należy za delegacje. Aplikacja będzie prawdopodobnie wykorzystywać api google kalendarz i będzie pobierać dni wolne. W kwestii wykorzystania możliwości smartphona: użytkownik wprowadza numer do kadrowej czy tam szefa i w przypadku L4 czy na żądanie można od razu zadzwonić</p>
+        <p class="lead">to kalendarz do którego użytkownik może wprowadzić urlopy, L4, na żądanie i delegacje. Aplikacja liczy ile zostało urlopu do wykorzystania, ile będzie potrącone z tytułu L4 i ile się należy za delegacje. Aplikacja wykorzystuje api google kalendarz i pobiera dni wolne. Program ykorzystuje również możliwości smartphona: użytkownik wprowadza numer do kadrowej/szefa i w przypadku L4 czy na żądanie można od razu zadzwonić</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Pobierz już teraz</a></p>
       </div>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+		Screenshoty
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalScrollableTitle">Screenshoty</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			Screen 1:
+			<img src="img/scr1.jpg" height="760" width="440">
+			Screen 2:
+			<img src="img/scr2.jpg" height="760" width="440">
+			Screen 3:
+			<img src="img/scr3.png" height="760" width="440">
+			Screen 4:
+			<img src="img/scr4.png" height="760" width="440">
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Extra large modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Diagram przypadków użycia</button>
+	<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+			<br>
+				<img src="img/dpu.jpg">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
 
       <div class="row marketing">
         <div class="col-lg-6">
