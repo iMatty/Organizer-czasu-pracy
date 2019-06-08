@@ -1,11 +1,9 @@
 // hamburger icon animation
 
 $(document).ready(function () {
-    $('.button').on('click', function (e) {
+    $('#back-btn').on('click', function (e) {
         e.preventDefault();
-        $('.animated-icon').toggleClass('open');
-        $('.navbar').toggleClass('dark');
-        $('body').css('overflow', 'hidden');
+        window.location.replace("list-view.html?userId="+ userId);
     });
 });
 
