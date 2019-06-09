@@ -1,5 +1,4 @@
 // hamburger icon animation
-
 $(document).ready(function () {
     $('.button').on('click', function (e) {
         e.preventDefault();
@@ -10,7 +9,7 @@ $(document).ready(function () {
 
     let holidays = [];
     let desc = []
-        
+
     $.ajax({
         type: 'GET',
         url: 'https://calendarific.com/api/v2/holidays?&api_key=674d78db76ced7b0975e56abfc02b6d35c265b15&country=PL&year=2019',
@@ -34,6 +33,7 @@ $(document).ready(function () {
         window.location.replace("numbers-list.html?userId="+ userId);
     });
 });
+
 
 const eventList = document.querySelector('#event-list');
 const form = document.querySelector('#add-event-form');
@@ -100,9 +100,9 @@ form.addEventListener('submit', (e) => {
 db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
-        if(change.type == 'added'){
+        if(change.type === 'added'){
             renderEvent(change.doc);
-        } else if (change.type == 'removed'){
+        } else if (change.type === 'removed'){
             let li = eventList.querySelector('[data-id=' + change.doc.id + ']');
             eventList.removeChild(li);
         }

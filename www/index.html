@@ -50,10 +50,10 @@
                     <h2 class="signIn-container--line"><span>Albo</span></h2>
                     <form id="signIn-form">
                         <div class="form-group input-group">
-                            <input id='signIn-email' class="form-control " placeholder="test@gmail.com" type="text">
+                            <input id='signIn-email' class="form-control " placeholder="test@gmail.com" type="text" required>
                         </div>
                         <div class="form-group input-group">
-                            <input id="signIn-password" class="form-control" placeholder="********" type="password">
+                            <input id="signIn-password" class="form-control" placeholder="********" type="password" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -87,36 +87,30 @@
                        </div>
                     <form id="signUp-form">
                         <div class="form-group input-group">
-                            <input name="" id="name" class="form-control" placeholder="Nazwa" type="text">
+                            <input name="" id="name" class="form-control" placeholder="Nazwa" type="text" required>
                         </div>
 
                         <div class="form-group input-group">
-                            <input name="" id='signUp-email' class="form-control" placeholder="Adres email" type="email">
+                            <input name="" id='signUp-email' class="form-control" placeholder="Adres email" type="email" required>
                         </div>
 
                         <div class="form-group input-group">
-                            <input id="signUp-password" class="form-control" placeholder="Utwórz hasło" type="password">
+                            <input id="signUp-password" class="form-control" placeholder="Utwórz hasło" type="password" required>
                         </div>
 
                         <div class="form-group input-group">
-                            <input class="form-control" placeholder="Potwierdź hasło" type="password">
+                            <input class="form-control" id="signUp-confirmPassword" placeholder="Potwierdź hasło" type="password" required>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-login"> Stwórz konto</button>
+                            <button type="submit" class="btn btn-login" id="btn-createAccount"> Stwórz konto</button>
                         </div>
-                        <p class="text-center signUp-container--btn">Posiadasz konto? <a href="#">Zaloguj się ! </a></p>
+                        <p class="text-center signUp-container--btn">Posiadasz konto? <a href="index.html">Zaloguj się ! </a></p>
                     </form>
                    </div>
         </aside>
     </div>
 </div>
-
-    <div class="container main-app" id="mainApp">
-        <br>
-        <h1>MAIN APP elo elo 5 2 0</h1>
-        <button type="button" class="btn" id="logoutBtn">Logout</button>
-    </div>
 
 
 
