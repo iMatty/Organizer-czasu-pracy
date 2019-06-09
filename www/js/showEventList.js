@@ -77,6 +77,8 @@ accountConfig.addEventListener('click', (e) => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    start_date = form.start.value;
+    end_date = form.koniec.value;
 
     if (Validate(start_date) && Validate(end_date)) {
         db.collection('events').add({
