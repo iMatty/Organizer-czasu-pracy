@@ -37,7 +37,7 @@ $(document).ready(function () {
 
 const eventList = document.querySelector('#event-list');
 const form = document.querySelector('#add-event-form');
-let url = new URL(location.href)
+let url = new URL(location.href);
 let userId = url.searchParams.get("userId");
 
 // create event & render event
@@ -107,4 +107,11 @@ db.collection('events').where('userId', '==', userId).onSnapshot(snapshot => {
             eventList.removeChild(li);
         }
     });
+});
+
+const userEventList = document.getElementById('userEventListBtn')
+
+userEventList.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.replace("user-event-list.html?userId="+ userId);
 });

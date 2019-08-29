@@ -36,32 +36,35 @@
         <a class="nav-brand">Organizer czasu pracy</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent22">
-            <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
                 <li class="navbar--userInfo">
                         <span class="navbar--userInfo__user">
                             <h4>Konto testowe</h4>
-                            <p>Graphic Designer</p>
+                            <!-- <p>Graphic Designer</p> -->
                         </span>
                     <span class="navbar--userInfo__icon"><i
-                            class="fas fa-user-circle fa-5x"></i><p id="accountConfig">Konfiguracja konta</p></span>
+                          class="fas fa-user-circle fa-5x"></i><p id="accountConfig">Konfiguracja konta</p></span>
 
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Mój kalendarz<span class="sr-only">(current)</span></a>
-                </li>
+                <!-- </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lista zdarzeń</a>
-                </li>
+                    <a class="nav-link" id="userEventList" href="#">Lista zdarzeń</a>
+                </li> -->
                 <li class="nav-item">
+                    <button type="button" class="nav-link btn" id="userEventListBtn">Lista zdarzeń</button>
+                </li>
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Szukaj</a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Powiadomienia</a>
-                </li>
+                </li> -->
                 <hr>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Ustawienia</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <button type="button" class="nav-link btn btn-logout" id="logoutBtn">Logout</button>
                 </li>
@@ -77,10 +80,8 @@
                 crossorigin="anonymous"></script>
         <script src="js/jquery.simple-calendar.js"></script>
 
-        
-
         <div class="content" align="center">
-		<h2>Dni wolne</h2>
+		        <h2>Dni wolne</h2>
             <form id="add-event-form">
                 <input type="text" name="type" placeholder="rodzaj urlopu">
                 <input type="text" name="start" placeholder="DD/MM/YYYY">
@@ -88,24 +89,17 @@
                 <button id="add" style="float: right;  margin-top: 45px;"><img src="img/plus.svg" width="30" height="30" /></button>
             </form>
             <ul id="event-list"></ul>
-
         </div>
-		
-	<div>
-		
-		<button id="call" style="float: left;"><img src="img/call.svg" width="30" height="30" /></button>
-	</div>
-	
+    	  <div>
+    		    <button id="call" style="float: left;"><img src="img/call.svg" width="30" height="30" /></button>
+    	  </div>
     </div>
-	
-
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
     <script src="js/firebaseConfig.js"></script>
     <script src="js/auth.js"></script>
-        <script src='js/validate.js'></script>
-        <script src="js/showEventList.js"></script>
+    <script src='js/validate.js'></script>
+    <script src="js/showEventList.js"></script>
     </body>
 </html>
-
